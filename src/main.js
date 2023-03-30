@@ -58,5 +58,5 @@ const cfg = {
     ]
 }
 // Create & render chart
-let c = new CanvasJS.Chart("mychart", cfg);
+let c = new CanvasJS.Chart("demochart", cfg);
 c.render();

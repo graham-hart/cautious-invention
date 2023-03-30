@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <title>Clarity</title>
+    <link rel="stylesheet" href="src/demo.css">
     <link rel="stylesheet" href="src/main.css">
-
+    <title>Clarity</title>
 </head>
 <body>
     <nav class="navbar">
@@ -19,7 +18,6 @@
             </a>
         </div>
         <div class="navbar-menu"> <!-- contains items -->
-            
             <div class="navbar-start"> <!-- Container for navbar items, not sure why framework requests it -->
                 <!--items here will appear from the left side of the nav, directly next to the brand-->
             </div>
@@ -35,9 +33,6 @@
                 <a class="navbar-item" href="about.html">
                     About
                 </a>
-                <!--button class="navbar-item" href="index.html">
-                    Demo
-                </button-->
                 <div class="navbar-item">
                     <!-- I have no idea how their navbar buttons work but this was how it was done in the docs so :D -->
                     <p class="control">
@@ -55,22 +50,14 @@
           <p class="title">
             Clarity
           </p>
-          <p class="subtitle">
-            Tell the whole story
-          </p>
         </div>
     </section>
     <section class="section is-medium">
-        <h1 class="title"> Welcome to a new kind of lifestyle. </h1>
-        <h2 class="subtitle"> One driven by data, always on the look out for ways to improve. </h2>
-        <p> Clarity is an app to help you achieve this kind of lifestyle. It helps you identify trends, enabling you to make an impact on them. </p>
-        <br>
-        <p> With Clarity, you'll be able to see how things are going -- instead of just trying to judge moment-to-moment. 
-            <br> It's <strong> data-driven living for our modern world.</strong>
-        </p>
+        <h1 class="title">Demo Data</h1>
+        <h2 class="subtitle">Demo data display for exercise vs. sleep time</h2>
+        <div id="demochart"></div>
     </section>
 
-    
 
     <footer class="footer">
         <div class="content has-text-centered">
@@ -79,5 +66,6 @@
             </p>
         </div>
     </footer>
+    <script src="src/main.js"></script>
 </body>
 </html>
