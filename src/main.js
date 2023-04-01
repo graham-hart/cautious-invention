@@ -31,6 +31,7 @@ function constructConfig() {
     const cfg = {
         title: {
             text: `${data[data0].name} vs. ${data[data1].name}`,
+            fontFamily: "sans-serif",
         },
         axisX: {
             title: "Day",
@@ -43,6 +44,7 @@ function constructConfig() {
                 tickColor: "#C24642",
                 labelFontColor: "#C24642",
                 titleFontColor: "#C24642",
+                labelFontFamily: "sans-serif",
                 includeZero: true,
             },
             {
@@ -52,6 +54,7 @@ function constructConfig() {
                 labelFontColor: "#369EAD",
                 titleFontColor: "#369EAD",
                 includeZero: true,
+                labelFontFamily: "sans-serif",
             }
         ],
         toolTip: {

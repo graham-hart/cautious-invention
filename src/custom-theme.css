@@ -5,3 +5,7 @@
 #lede {
     font-size: 100px;
 }
+
+footer {
+    position: relative;
+}

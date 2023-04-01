@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
     <link rel="stylesheet" href="src/demo.css">
     <link rel="stylesheet" href="src/main.css">
+    <link rel="stylesheet" href="src/custom-theme.css">
     <title>Clarity</title>
 </head>
 <body>
@@ -46,28 +47,28 @@
         </div>
     </nav>
 
-    <!--May need updates too-->
-    <section class="hero is-primary">
-        <div class="hero-body">
-          <p class="title">
-            Clarity
-          </p>
-        </div>
-    </section>
 
     <!--Can you make this look decent please? Thanks-->
-    <section class="section is-medium">
-        <h1 class="title">Demo</h1>
-        <h2 class="subtitle">Demo data display</h2>
-        <div id="demochart"></div>
-        <div class="select is-primary">
+    <section class="section">
+        <h2 class="title is-2 "> Demo </h2>
+        <div class="select is-primary is-rounded">
             <select class="data-select" data-yaxis="0">
             </select>
         </div>
-        <div class="select is-primary">
-        <select class="data-select" data-yaxis="1">
-        </select>
+        <div class="select is-primary is-rounded">
+            <select class="data-select" data-yaxis="1">
+            </select>
         </div>
+
+        <div class="columns">
+            <div id="demochart"></div>
+            <div class="content">
+                <h1 class="is-1">Usage</h1>
+                <p>Ugh I don't know what to put here, I don't want to try and render custom data</p>
+                <p> A second paragraph </p>
+            </div>
+        </div>
+        
 
     </section>
 
