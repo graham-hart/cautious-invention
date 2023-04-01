@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Clarity</title>
+    <link rel="stylesheet" href="src/main.css">
+    <link rel="stylesheet" href="src/custom-theme.css">
+
+</head>
+<body style="background: url('static/homepage-bg.png') no-repeat">
+    <nav class="navbar" style=" backdrop-filter: blur(0.8); background-color: transparent;">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="home.html"> <!-- change this -->
+                <img src="static/logo-black.png" width="90" height="20">
+            </a>
+        </div>
+        <div class="navbar-menu"> <!-- contains items -->
+            
+            <div class="navbar-start"> <!-- Container for navbar items, not sure why framework requests it -->
+                <!--items here will appear from the left side of the nav, directly next to the brand-->
+            </div>
+
+            <div class="navbar-end">
+                <a class="navbar-item" href="index.html">
+                    Home
+                </a>
+                <a class="navbar-item" href="index.html">
+                    About
+                </a>
+                <div class="navbar-item">
+                    <!-- I have no idea how their navbar buttons work but this was how it was done in the docs so :D -->
+                    <p class="control">
+                        <a class="button is-primary" href="demo.html">
+                            <span>Demo</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <h2 class="title is-2 crumb-title"> Home </h2>
+    <section class="section">
+        <h1 class="title" id="lede"> Welcome to a new kind of lifestyle. </h1>
+        <h3 class="subtitle is-3"> With Clarity, drive your life with data.</h3>
+        <br> <br>
+       <button class="button is-primary is-large is-rounded" style="display: block; margin: auto;" onclick="window.location.href='demo.html'"> Try the demo </button>
+        <br> <br>
+        <p class="is-grey-lighter is-4" style="text-align: center;"><strong>Learn More</strong></p>
+        <img src="static/Arrow-utility.png" style="display: block; margin: auto;">
+    </section>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="columns">
+                <div class="column content is-large" style="padding:0px 70px;">
+                    <p> Clarity is an app to help you achieve this kind of lifestyle. It helps you identify trends, enabling you to make an impact on them. </p>
+                    <br>
+                    <p> With Clarity, you'll be able to see how things are going -- instead of just trying to judge moment-to-moment. 
+                        <br> It's <strong> data-driven living for our modern world.</strong>
+                    </p>
+                </div>
+            </div> 
+        </div>
+    </section>
+    
+    
+</body>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+          <strong>Clarity</strong> by <a href="https://github.com/graham-hart">Graham Hart</a> and <a href="https://logangraves.com">Logan Graves</a>. 
+        </p>
+    </div>
+</footer>
+</html>
