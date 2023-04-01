@@ -22,58 +22,65 @@ const data = {
         name: "Mood"
     },
 };
+
+let data0 = "sleep"
+let data1 = "exercise"
+
 // Config for graph
-const cfg = {
-    title: {
-        text: "Sleep vs. Exercise Time",
-    },
-    axisX: {
-        title: "Day",
-        minimum: 0,
-    },
-    axisY:[
-        {
-            title: `Sleep (${data['sleep']['unit']})`,
-            lineColor: "#C24642",
-            tickColor: "#C24642",
-            labelFontColor: "#C24642",
-            titleFontColor: "#C24642",
-            includeZero: true,
+function constructConfig() {
+    const cfg = {
+        title: {
+            text: `${data[data0].name} vs. ${data[data1].name}`,
         },
-        {
-            title: `Exercise (${data['exercise']['unit']})`,
-            lineColor: "#369EAD",
-            tickColor: "#369EAD",
-            labelFontColor: "#369EAD",
-            titleFontColor: "#369EAD",
-            includeZero: true,
-        }
-    ],
-    toolTip: {
-		shared: true
-	},
-	legend: {
-		cursor: "pointer",
-	},
-    type: 'line',
-    data: [
-        {
-            type: "line",
-            name: "Sleep",
-            color: "#C24642",
-            axisYIndex: 0,
-            showInLegend: true,
-            dataPoints: data["sleep"].data,
+        axisX: {
+            title: "Day",
+            minimum: 0,
         },
-        {
-            type: "line",
-            name: "Exercise",
-            color: "#369EAD",
-            showInLegend: true,
-            axisYIndex: 1,
-            dataPoints: data["exercise"].data,
-        }
-    ]
+        axisY:[
+            {
+                title: `${data[data0].name} (${data[data0].unit})`,
+                lineColor: "#C24642",
+                tickColor: "#C24642",
+                labelFontColor: "#C24642",
+                titleFontColor: "#C24642",
+                includeZero: true,
+            },
+            {
+                title: `${data[data1].name} (${data[data1].unit})`,
+                lineColor: "#369EAD",
+                tickColor: "#369EAD",
+                labelFontColor: "#369EAD",
+                titleFontColor: "#369EAD",
+                includeZero: true,
+            }
+        ],
+        toolTip: {
+            shared: true
+        },
+        legend: {
+            cursor: "pointer",
+        },
+        type: 'line',
+        data: [
+            {
+                type: "line",
+                name: data[data0].name,
+                color: "#C24642",
+                axisYIndex: 0,
+                showInLegend: true,
+                dataPoints: data[data0].data,
+            },
+            {
+                type: "line",
+                name: data[data1].name,
+                color: "#369EAD",
+                showInLegend: true,
+                axisYIndex: 1,
+                dataPoints: data[data1].data,
+            }
+        ]
+    }
+    return cfg;   
 }
 
 function addSelectorOption(name, value, selector) {
@@ -92,25 +99,15 @@ function initializeSelectors() {
         }
         selector.addEventListener("change", (e) => {
             const axis = e.target.getAttribute("data-yaxis");
-            const value = e.target.value;
-            updateConfig(value, axis)
-            let c = new CanvasJS.Chart("demochart", cfg)
-            c.render();
+            if(axis == 0) {
+                data0 = e.target.value;
+            } else {
+                data1 = e.target.value
+            }
+            new CanvasJS.Chart("demochart", constructConfig()).render()
         })
         selector.value=dataKeys[selectors.indexOf(selector)]
     }
 }
-
-function updateConfig(dataValue, axisYIndex) {
-    const axisY = cfg.axisY[axisYIndex];
-    axisY.title = `${data[dataValue].name} (${data[dataValue].unit})`
-    axisY.dataPoints = data[dataValue].data;
-    const d = cfg.data.filter((d)=>{return d.axisYIndex==axisYIndex})[0]
-    d.dataPoints = data[dataValue].data
-    d.name=data[dataValue].name
-}
-
-
-initializeSelectors();
-let c = new CanvasJS.Chart("demochart", cfg);
-c.render();
+initializeSelectors()
+new CanvasJS.Chart("demochart", constructConfig()).render()
